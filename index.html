@@ -151,7 +151,7 @@ function getCookie(cname) {
   return "";
 }
 function setCookie(cname, cval) {
-	if (getCookie(cname)) {
+	if (getCookie(cname)!="") {
     	document.cookie = document.cookie.replaceAll(
         	cname + '=' + getCookie(cname),
             cname + '=' + cval
@@ -183,7 +183,7 @@ function DarkModeToggle() {
     } else {
     	html.style.filter = '';
         document.body.style.backgroundColor = '';
-        deleteCookie('darkmode');
+        setCookie('darkmode', '0');
     }
 
 }
