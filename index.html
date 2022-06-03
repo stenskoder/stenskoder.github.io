@@ -177,12 +177,14 @@ function DarkModeToggle() {
 	let html = document.getElementsByTagName("html")[0];
     
     if (!html.style.filter) {
-      	html.style.filter = 'invert(100%)';
+      	html.style.filter = 'invert(100%) hue-rotate(180deg)';
       	document.body.style.backgroundColor = 'white';
+        document.body.innerHTML = document.body.innerHTML.replaceAll('"color:white">vit', '"color:white;filter:invert(100%);">vit').replaceAll('color:#3b3b3b">svart', 'color:#3b3b3b;filter:invert(100%);">svart');
         setCookie('darkmode', '1');
     } else {
     	html.style.filter = '';
         document.body.style.backgroundColor = '';
+        document.body.innerHTML = document.body.innerHTML.replaceAll('"color:white;filter:invert(100%);">vit', '"color:white">vit').replaceAll( 'color:#3b3b3b;filter:invert(100%);">svart;', 'color:#3b3b3b">svart');
         setCookie('darkmode', '0');
     }
 
