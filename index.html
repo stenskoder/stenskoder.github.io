@@ -161,10 +161,7 @@ function setCookie(cname, cval) {
     }
 }
 function deleteCookie(cname) {
-	document.cookie = document.cookie.replaceAll(
-    	cname + '=' + getCookie(cname),
-        ''
-    );
+	document.cookie = '';
 }
 
 function HueSlider(el) {
