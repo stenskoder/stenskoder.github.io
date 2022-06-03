@@ -47,6 +47,7 @@ a {
 	font-family: "Lucida Console", "Courier New", monospace;
     font-size: 3rem;
     filter: drop-shadow(0 0 0.1rem black);
+    cursor: copy;
 }
 .stenskoder {
 	font-family: "Lucida Console", "Courier New", monospace;
@@ -84,10 +85,33 @@ a {
     filter: drop-shadow(0 0 0.1rem black);
 }
 
+.darkmode {
+	position: absolute;
+    top:10px;
+    right:10px;
+    width: 4rem;
+    height: 4rem;
+    filter: drop-shadow(0 0 0.1rem black);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.darkmode:hover {
+	opacity: 0.7;
+}
+
+html {
+	filter: '';
+}
+
+body {
+	background-color: 'white';
+}
+
 </style>
 </head>
 <body>
-
+<img src="https://stenskoder.github.io/nightmode.webp" class="darkmode" onclick="DarkModeToggle()"></img>
 <center>
 
 <p class="stenskoder">
@@ -111,6 +135,38 @@ Stens Koder
 <p class="bottom">Stens Koder, (c) Sten<br><hr><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p></center>
 
 <script>
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function setCookie(cname, cval) {
+	if (getCookie(cname)) {
+    	document.cookie = document.cookie.replaceAll(
+        	cname + '=' + getCookie(cname),
+            cname + '=' + cval
+        );
+    } else {
+    	document.cookie += cname + '=' + cval + ';';
+    }
+}
+function deleteCookie(cname) {
+	document.cookie = document.cookie.replaceAll(
+    	cname + '=' + getCookie(cname),
+        ''
+    );
+}
+
 function HueSlider(el) {
 	let val = (el.value / 100).toString();
     
@@ -119,6 +175,24 @@ function HueSlider(el) {
     
 	document.getElementById("huespeed").innerHTML = 'Hastighet: ' + val;
     document.getElementById("aHue").href = 'javascript:var speed='+ val +';function delay(t){return new Promise(e=>setTimeout(e,t))}async function hue(){for(;;){for(let e=0;e<360;e=e+speed)document.body.style.filter="hue-rotate("+e+"deg)",await delay(1);}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){hue();}}main();';
+}
+function DarkModeToggle() {
+	let html = document.getElementsByTagName("html")[0];
+    
+    if (!html.style.filter) {
+      	html.style.filter = 'invert(100%)';
+      	document.body.style.backgroundColor = 'white';
+        setCookie('darkmode', '1');
+    } else {
+    	html.style.filter = '';
+        document.body.style.backgroundColor = '';
+        deleteCookie('darkmode');
+    }
+
+}
+console.log(document.cookie);
+if (getCookie("darkmode") == '1') {
+	DarkModeToggle();
 }
 </script>
 
