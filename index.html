@@ -48,6 +48,10 @@ a {
     font-size: 3rem;
     filter: drop-shadow(0 0 0.1rem black);
     cursor: copy;
+    opacity: 1;
+}
+a:hover {
+	opacity: 0.7;
 }
 .stenskoder {
 	font-family: "Lucida Console", "Courier New", monospace;
@@ -108,6 +112,21 @@ body {
 	background-color: 'white';
 }
 
+@keyframes blerra {
+  from {filter: drop-shadow(0 0 0.01rem black) blur(0); color: violet;}
+  to {filter: drop-shadow(0 0 0.01rem black) blur(10px); color: MediumSeaGreen;}
+}
+
+.bler {
+	color: violet;
+    filter: '';
+	animation-name: blerra;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 </style>
 </head>
 <body>
@@ -129,6 +148,9 @@ Stens Koder
 <hr><br>
 
 <a style="color:gray;" href='javascript:function delay(time) { return new Promise(resolve => setTimeout(resolve, time));} async function gray() { if (document.body.style.filter != "grayscale(99%)") { for (let i = 0; i < 100; i++) { document.body.style.filter = "grayscale("+i+"%)"; await delay(20); } } else { for (let i = 100; i > 1; i--) {  document.body.style.filter = "grayscale("+i+"%)"; await delay(20); } } }function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){gray();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">Grayscale</a><p class="np">Gör skärmen <span style="color:#3b3b3b">svart</span> <span style="color:white">vit</span>!</p>
+
+<hr><br>
+<a class="bler" href='javascript:javascript:function delay(time) { return new Promise(resolve => setTimeout(resolve, time));} async function gray() { if (document.body.style.filter != "blur(99px)") { for (let i = 0; i < 100; i++) { document.body.style.filter = "blur("+i+"px)"; await delay(20); } } else { for (let i = 100; i > 1; i--) {%C2%A0document.body.style.filter = "blur("+i+"px)"; await delay(20); } document.body.style.filter = "blur(0)" } }function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){gray();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">Blur</a><p class="np">Gör skärmen blurrad/suddig!</p>
 
 </p>
 
