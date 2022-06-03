@@ -9,7 +9,7 @@
   <title>Stens Koder</title>
 <style>
 .bottom {
-	position: absolute; bottom: 5px; font-family: "Arial"; font-size: 10px;
+	font-family: "Arial"; font-size: 10px;
     filter: drop-shadow(0 0 0.02rem black);
 }
 .hue {
@@ -48,6 +48,11 @@ a {
     font-size: 3rem;
     filter: drop-shadow(0 0 0.1rem black);
 }
+.stenskoder {
+	font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 5rem;
+    filter: drop-shadow(0 0 0.1rem black);
+}
 
 .slider {
   -webkit-appearance: none;
@@ -83,8 +88,16 @@ a {
 </head>
 <body>
 
-<center><p class="np">
+<center>
 
+<p class="stenskoder">
+Stens Koder
+<span style="font-size: 20px;position:absolute;top:6rem;left:50%;transform: translate(-50%);"><br>Skrivna av Sten</span>
+<hr>
+</p>
+
+
+<p class="np">
 <a class="hue" href='javascript:var speed=5;function delay(t){return new Promise(e=>setTimeout(e,t))}async function hue(){for(;;){for(let e=0;e<360;e=e+speed)document.body.style.filter="hue-rotate("+e+"deg)",await delay(1);}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){hue();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" id="aHue">HUE Disco LED Effect</a><p class="np">Skiftar färgernas <span class="huea" style="color: blue">HUE</span>.</p>
 <p class="np" id="huespeed">Hastighet: 5.00</p><p class="np">
 <input type="range" min="10" max="1000" value="500" class="slider" oninput="HueSlider(this)"></p>
@@ -95,7 +108,7 @@ a {
 
 </p>
 
-<p class="bottom">Stens Koder, (c) Sten<br><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p></center>
+<p class="bottom">Stens Koder, (c) Sten<br><hr><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p></center>
 
 <script>
 function HueSlider(el) {
