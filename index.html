@@ -7,10 +7,93 @@
   <meta name="author" content="Sten">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stens Koder</title>
+<style>
+.bottom {
+	position: absolute; bottom: 5px; font-family: "Arial"; font-size: 10px;
+    filter: drop-shadow(0 0 0.02rem black);
+}
+.hue {
+	filter: '';
+}
+
+@keyframes hueshift {
+  from {filter: drop-shadow(0 0 0.1rem black) hue-rotate(0deg);}
+  to {filter: drop-shadow(0 0 0.1rem black) hue-rotate(359deg);}
+}
+
+.hue:hover {
+	animation-name: hueshift;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+p {
+	text-align: center;
+}
+
+a {
+	font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 3rem;
+    filter: drop-shadow(0 0 0.1rem black);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.np {
+	font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 2rem;
+    filter: drop-shadow(0 0 0.1rem black);
+}
+
+</style>
 </head>
 <body>
 
-<p>Stens Koder, (c) Sten Inc.<br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p>
+<p class="np">
+
+<a class="hue" href='javascript:var speed=5;function delay(t){return new Promise(e=>setTimeout(e,t))}async function hue(){for(;;){for(let e=0;e<360;e=e+speed)document.body.style.filter="hue-rotate("+e+"deg)",await delay(1);}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){hue();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" id="aHue">HUE Disco LED Effect</a>
+<p class="np" id="huespeed">Hastighet: 5.00</p><p class="np">
+<input type="range" min="10" max="1000" value="500" class="slider" oninput="HueSlider(this)"></p>
+
+</p>
+
+<p class="bottom">Stens Koder, (c) Sten<br><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p>
+
+<script>
+function HueSlider(el) {
+	let val = (el.value / 100).toString();
+    
+    if (!val.includes('.')) { val += '.00'; }
+    else if (val.split('.')[1].length < 2) { val += '0'; }
+    
+	document.getElementById("huespeed").innerHTML = 'Hastighet: ' + val;
+    document.getElementById("aHue").href = 'javascript:var speed='+ val +';function delay(t){return new Promise(e=>setTimeout(e,t))}async function hue(){for(;;){for(let e=0;e<360;e=e+speed)document.body.style.filter="hue-rotate("+e+"deg)",await delay(1);}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){hue();}}main();';
+}
+</script>
 
 </body>
 </html>
