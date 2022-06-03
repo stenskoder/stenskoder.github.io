@@ -83,13 +83,17 @@ a {
 </head>
 <body>
 
-<p class="np">
+<center><p class="np">
 
 <a class="hue" href='javascript:var speed=5;function delay(t){return new Promise(e=>setTimeout(e,t))}async function hue(){for(;;){for(let e=0;e<360;e=e+speed)document.body.style.filter="hue-rotate("+e+"deg)",await delay(1);}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){hue();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" id="aHue">HUE Disco LED Effect</a><p class="np">Skiftar färgernas <span class="huea" style="color: blue">HUE</span>.</p>
 <p class="np" id="huespeed">Hastighet: 5.00</p><p class="np">
 <input type="range" min="10" max="1000" value="500" class="slider" oninput="HueSlider(this)"></p>
 
-</p>
+<hr><br>
+
+<a style="color:gray;" href='javascript:function delay(time) { return new Promise(resolve => setTimeout(resolve, time));} async function gray() { if (document.body.style.filter != "grayscale(99%)") { for (let i = 0; i < 100; i++) { document.body.style.filter = "grayscale("+i+"%)"; await delay(20); } } else { for (let i = 100; i > 1; i--) {  document.body.style.filter = "grayscale("+i+"%)"; await delay(20); } } }function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){gray();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">Grayscale</a><p class="np">Gör skärmen <span style="color:#3b3b3b">svart</span> <span style="color:white">vit</span>!</p>
+
+</p></center>
 
 <p class="bottom">Stens Koder, (c) Sten<br><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p>
 
