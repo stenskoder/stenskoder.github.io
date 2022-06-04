@@ -141,6 +141,49 @@ body {
     animation-iteration-count: infinite;
 }
 
+@keyframes mirrura {
+    33% {
+        transform: scaleX(1);
+    }
+    66% {
+    	transform: scaleX(-1);
+    }
+    99% {
+    	transform: scaleX(1);
+    }
+}
+
+.mirrur {
+	color: gray;
+	display: inline-block;
+    transform: scaleX(1);
+	animation-name: mirrura;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    text-decoration: underline;
+}
+
+@keyframes uponera {
+    33% {
+        transform: scaleY(1);
+    }
+    66% {
+    	transform: scaleY(-1);
+    }
+    99% {
+    	transform: scaleY(1);
+    }
+}
+
+.uponer {
+	display: inline-block;
+    transform: scaleY(1);
+	animation-name: uponera;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    text-decoration: underline;
+}
+
 </style>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Italianno" />
 </head>
@@ -169,6 +212,12 @@ Stens Koder
 
 <hr><br>
 <a class="invert" href='javascript:javascript:function delay(time) { return new Promise(resolve => setTimeout(resolve, time));} async function invert() { if (document.body.style.filter != "invert(99%)") { for (let i = 0; i < 100; i++) { document.body.style.filter = "invert("+i+"%)"; await delay(20); } } else { for (let i=100;i>1;i--) {  document.body.style.filter = "invert("+i+"%)";await delay(20);}}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){invert();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">Invertera färger</a><p class="np">Svart blir vitt, rött blir blått, grönt blir rosa, ...</p>
+
+<hr><br>
+<a href='javascript:function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){document.body.style.transform+="scaleX(-1)";}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><span class="mirrur">Spegel</span> effekt</a><p class="np">Gör skärmen speglad!</p>
+
+<hr><br>
+<a href='javascript:function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){document.body.style.transform+="scaleY(-1)";}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><span class="uponer">Upp och ner</span> effekt</a><p class="np">Gör skärmen upp- o ner!</p>
 
 <hr><br>
 <a style="color:LemonChiffon;font: 400 3rem 'Italianno', Helvetica, Sans-serif;" href='#' id="LeFishe" title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><img src="https://stenskoder.github.io/star.png" title="Stor favorit" width=50 height=50></img><i>Le Fishé au chocolat.</i></a><p class="np"><b>Majoritetens Favorit</b><br>[MEME] Fisk med chocklad och baugetter.</p>
