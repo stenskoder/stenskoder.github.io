@@ -323,6 +323,7 @@ var kedon = function(e){return 123!=event.keyCode&&((!e.ctrlKey||!e.shiftKey||e.
 document.onkeydown= function(e){
 	let h = kedon(e);
     if (h != undefined) {
+		document.getElementsByTagName("html")[0].style.filter = '';
     	document.getElementById("sonothalalmode").click();
     }
     return h;
