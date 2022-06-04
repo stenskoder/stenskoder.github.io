@@ -127,6 +127,20 @@ body {
     animation-direction: alternate;
 }
 
+@keyframes inverta {
+  0% {filter: drop-shadow(0 0 0.1rem black) invert(0); }
+  100% {filter: drop-shadow(0 0 0.1rem black) invert(100%); }
+}
+
+.invert {
+	color: red;
+    filter: '';
+	animation-name: inverta;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
 </style>
 </head>
 <body>
@@ -151,6 +165,9 @@ Stens Koder
 
 <hr><br>
 <a class="bler" href='javascript:javascript:function delay(time) { return new Promise(resolve => setTimeout(resolve, time));} async function gray() { if (document.body.style.filter != "blur(99px)") { for (let i = 0; i < 100; i++) { document.body.style.filter = "blur("+i+"px)"; await delay(20); } } else { for (let i = 100; i > 1; i--) {%C2%A0document.body.style.filter = "blur("+i+"px)"; await delay(20); } document.body.style.filter = "blur(0)" } }function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){gray();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">Blur</a><p class="np">Gör skärmen blurrad/suddig!</p>
+
+<hr><br>
+<a class="invert" href='javascript:javascript:function delay(time) { return new Promise(resolve => setTimeout(resolve, time));} async function invert() { if (document.body.style.filter != "invert(99%)") { for (let i = 0; i < 100; i++) { document.body.style.filter = "invert("+i+"%)"; await delay(20); } } else { for (let i=100;i>1;i--) {  document.body.style.filter = "invert("+i+"%)";await delay(20);}}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){invert();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">Invertera färger</a><p class="np">Svart blir vitt, rött blir blått, grönt blir rosa, ...</p>
 
 </p>
 
@@ -211,7 +228,7 @@ function DarkModeToggle() {
     }
 
 }
-console.log(document.cookie);
+
 if (getCookie("darkmode") == '1') {
 	DarkModeToggle();
 }
