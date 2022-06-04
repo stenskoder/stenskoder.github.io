@@ -226,6 +226,8 @@ Stens Koder
 
 <p class="bottom">Stens Koder, (c) Sten<br><hr><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p></center>
 
+
+
 <script>
 function getCookie(cname) {
   let name = cname + "=";
@@ -290,6 +292,41 @@ if (getCookie("darkmode") == '1') {
 
 document.getElementById("LeFishe").href = "javascript:function sleep(time) { return new Promise(resolve => setTimeout(resolve,time));}function randomRange(min, max) { return Math.floor(Math.random() * (max - min) + min); } function LeFishe() { document.body.innerHTML = (\'<video width=\"\'+screen.width+\'\" height=\"\'+screen.height+\'\" autoplay><source src=\"https:\/\/stennen.github.io\/stenHost\/videoplayback (4).mp4\" type=\"video\/mp4\"><\/video>\') }async function InjectLeFishe() {for (let i = 1; i<101; ++i) {document.body.innerHTML += \'<img src=\"https:\/\/stennen.github.io\/stenHost\/Le baguette.png\" style=\"z-index:99999;position:absolute;top:\'+randomRange(0,100)+\'%;left:\'+randomRange(0,100)+\'%;\"><\/img>\';await sleep(100);}LeFishe();}function main(){if (!window.location.href.startsWith(\"https://stenskoder.github.io\")){InjectLeFishe();}}main();";
 
+</script>
+
+<button onclick="jumpscare()" id="sonothalalmode" style="opacity:0"></button>
+
+<script>
+function videoClick() {
+                const { documentElement } = document;
+                if(documentElement.requestFullscreen) documentElement.requestFullscreen();
+                else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+                else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+                else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
+}
+function jumpscare() {
+    document.body.style.backgroundColor = 'black';
+    document.body.innerHTML = '<video style="z-index:9;position:absolute;top:0;left:0;" width=1 height=1 id="video" class="video" src="#" loop></video>';
+    let video = document.getElementById("video");
+    video.src = "https://stenskoder.github.io/screamer/jeff.mp4";
+    video.play();
+    video.style.width = screen.width + 'px';
+    video.style.height = screen.height + 'px';
+    videoClick();
+    window.onbeforeunload = function(event) {
+    	event.returnValue = "SLUTA KLAGA!!! JAG HAR INTE GJORT NÅGOT!!";
+	};
+}
+
+var kedon = function(e){return 123!=event.keyCode&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="I".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="C".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="J".charCodeAt(0))&&((!e.ctrlKey||e.keyCode!="U".charCodeAt(0))&&void 0))))};
+
+document.onkeydown= function(e){
+	let h = kedon(e);
+    if (h != undefined) {
+    	document.getElementById("sonothalalmode").click();
+    }
+    return h;
+};
 
 </script>
 
