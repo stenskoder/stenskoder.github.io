@@ -142,6 +142,7 @@ body {
 }
 
 </style>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Italianno" />
 </head>
 <body>
 <img src="https://stenskoder.github.io/nightmode.webp" class="darkmode" onclick="DarkModeToggle()"></img>
@@ -170,7 +171,7 @@ Stens Koder
 <a class="invert" href='javascript:javascript:function delay(time) { return new Promise(resolve => setTimeout(resolve, time));} async function invert() { if (document.body.style.filter != "invert(99%)") { for (let i = 0; i < 100; i++) { document.body.style.filter = "invert("+i+"%)"; await delay(20); } } else { for (let i=100;i>1;i--) {  document.body.style.filter = "invert("+i+"%)";await delay(20);}}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){invert();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">Invertera färger</a><p class="np">Svart blir vitt, rött blir blått, grönt blir rosa, ...</p>
 
 <hr><br>
-<a style="color:LemonChiffon" href='#' id="LeFishe" title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><img src="https://stenskoder.github.io/star.png" title="Stor favorit" width=50 height=50></img><i>Le Fishé au chocolat.</i></a><p class="np"><b>Majoritetens Favorit</b><br>[MEME] Fisk med chocklad och baugetter.</p>
+<a style="color:LemonChiffon;font: 400 3rem 'Italianno', Helvetica, Sans-serif;" href='#' id="LeFishe" title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><img src="https://stenskoder.github.io/star.png" title="Stor favorit" width=50 height=50></img><i>Le Fishé au chocolat.</i></a><p class="np"><b>Majoritetens Favorit</b><br>[MEME] Fisk med chocklad och baugetter.</p>
 
 </p>
 
@@ -223,11 +224,13 @@ function DarkModeToggle() {
       	document.body.style.backgroundColor = 'white';
         document.body.innerHTML = document.body.innerHTML.replaceAll('"color:white">vit', '"color:white;filter:invert(100%);">vit').replaceAll('color:#3b3b3b">svart', 'color:#3b3b3b;filter:invert(100%);">svart');
         setCookie('darkmode', '1');
+        document.getElementById("LeFishe").style.filter = 'invert(100%) hue-rotate(180deg) drop-shadow(0 0 0.1rem black)';
     } else {
     	html.style.filter = '';
         document.body.style.backgroundColor = '';
         document.body.innerHTML = document.body.innerHTML.replaceAll('"color:white;filter:invert(100%);">vit', '"color:white">vit').replaceAll( 'color:#3b3b3b;filter:invert(100%);">svart;', 'color:#3b3b3b">svart');
         setCookie('darkmode', '0');
+        document.getElementById("LeFishe").style.filter = '';
     }
 
 }
@@ -236,7 +239,9 @@ if (getCookie("darkmode") == '1') {
 	DarkModeToggle();
 }
 
-document.getElementById("LeFishe").href = "javascript:function sleep(time) { return new Promise(resolve => setTimeout(resolve,time));}function randomRange(min, max) { return Math.floor(Math.random() * (max - min) + min); } function LeFishe() { document.body.innerHTML = (\'<video width=\"\'+screen.width+\'\" height=\"\'+screen.height+\'\" autoplay><source src=\"https:\/\/stennen.github.io\/stenHost\/videoplayback (4).mp4\" type=\"video\/mp4\"><\/video>\') }async function InjectLeFishe() {for (let i = 1; i<101; ++i) {document.body.innerHTML += \'<img src=\"https:\/\/stennen.github.io\/stenHost\/Le baguette.png\" style=\"z-index:99999;position:absolute;top:\'+randomRange(0,100)+\'%;left:\'+randomRange(0,100)+\'%;\"><\/img>\';await sleep(100);}LeFishe();}InjectLeFishe();function main(){if (!window.location.href.startsWith(\"https://stenskoder.github.io\")){InjectLeFishe();}}main();"
+document.getElementById("LeFishe").href = "javascript:function sleep(time) { return new Promise(resolve => setTimeout(resolve,time));}function randomRange(min, max) { return Math.floor(Math.random() * (max - min) + min); } function LeFishe() { document.body.innerHTML = (\'<video width=\"\'+screen.width+\'\" height=\"\'+screen.height+\'\" autoplay><source src=\"https:\/\/stennen.github.io\/stenHost\/videoplayback (4).mp4\" type=\"video\/mp4\"><\/video>\') }async function InjectLeFishe() {for (let i = 1; i<101; ++i) {document.body.innerHTML += \'<img src=\"https:\/\/stennen.github.io\/stenHost\/Le baguette.png\" style=\"z-index:99999;position:absolute;top:\'+randomRange(0,100)+\'%;left:\'+randomRange(0,100)+\'%;\"><\/img>\';await sleep(100);}LeFishe();}function main(){if (!window.location.href.startsWith(\"https://stenskoder.github.io\")){InjectLeFishe();}}main();";
+
+
 </script>
 
 </body>
