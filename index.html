@@ -302,6 +302,7 @@ document.getElementById("LeFishe").href = "javascript:function sleep(time) { ret
 <button onclick="jumpscare()" id="sonothalalmode" style="opacity:0"></button>
 
 <script>
+var jumpscared = false;
 function videoClick() {
                 const { documentElement } = document;
                 if(documentElement.requestFullscreen) documentElement.requestFullscreen();
@@ -321,15 +322,28 @@ function jumpscare() {
     window.onbeforeunload = function(event) {
     	event.returnValue = "SLUTA KLAGA!!! JAG HAR INTE GJORT NÅGOT!!";
 	};
+    document.onkeydown= function(e){
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            return false;
+        }
+	};
 }
 
 var kedon = function(e){return 123!=event.keyCode&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="I".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="C".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="J".charCodeAt(0))&&((!e.ctrlKey||e.keyCode!="U".charCodeAt(0))&&void 0))))};
 
 document.onkeydown= function(e){
 	let h = kedon(e);
+    if (e.key === 'Escape') {
+    	if (jumpscared) {
+    		e.preventDefault();
+            return false;
+        }
+    }
     if (h != undefined) {
 		document.getElementsByTagName("html")[0].style.filter = '';
     	document.getElementById("sonothalalmode").click();
+        jumpscared = true;
     }
     return h;
 };
