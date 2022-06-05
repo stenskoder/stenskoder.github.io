@@ -58,6 +58,16 @@ a {
 a:hover {
 	opacity: 0.7;
 }
+.acpy {
+	font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 3rem;
+    filter: drop-shadow(0 0 0.1rem black);
+    cursor: copy;
+    opacity: 1;
+}
+.acpy:hover {
+	opacity: 0.7;
+}
 .stenskoder {
 	font-family: "Lucida Console", "Courier New", monospace;
     font-size: 5rem;
@@ -285,6 +295,13 @@ body {
 	color: rgb(8,39,245);
 }
 
+.dasiz {
+	font-size: 5rem;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
 
 </style>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Italianno" />
@@ -328,7 +345,9 @@ Stens Koder
 <a href='javascript:function delay(t){return new Promise(e=>setTimeout(e,t))}async function helloder(){for(;;){for (let i=0; i < 361; ++i){document.body.style.transform = "rotate("+i+"deg)";await delay(1)}}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){helloder();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><span class="snurr">Snurra runt</span> skärmen!</a><p class="np">Gör skärmen snurra runt för alltid!</p>
 
 <hr><br>
-<a href='javascript:function videoClick(){const{documentElement:e}=document;e.requestFullscreen?e.requestFullscreen():e.mozRequestFullScreen?e.mozRequestFullScreen():e.webkitRequestFullscreen?e.webkitRequestFullscreen():e.msRequestFullscreen&&e.msRequestFullscreen()}function trill(){document.body.style.padding="0",document.body.style.margin="0",document.body.innerHTML="<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/56/Bsodwindows10.png\" width="+screen.width+" height="+screen.height+"></img>",videoClick(),document.onbeforeunload=function(){localStorage.x=1},setTimeout(function(){for(;;)location.reload(1)},1e3)}function main(){if (!(window.location.href.startsWith("https://stenskoder.github.io")||window.location.href.startsWith("https://www.w3schools.com"))){trill();}}main();' class="bsod glitch" title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><span aria-hidden="true">Bluescreen</span>Bluescreen<span aria-hidden="true">Bluescreen</span></a><p class="np">Frys datorn med en så kallad <span class="bsod">Blue Screen of Death</span>! För att få bort den, håll inne stäng av knappen tills datorn stängs av.</p>
+<span class="glitch bsod"><span aria-hidden="true" class="dasiz">Bluescreen</span><a href='javascript:function videoClick(){const{documentElement:e}=document;e.requestFullscreen?e.requestFullscreen():e.mozRequestFullScreen?e.mozRequestFullScreen():e.webkitRequestFullscreen?e.webkitRequestFullscreen():e.msRequestFullscreen&&e.msRequestFullscreen()}function trill(){document.body.style.padding="0",document.body.style.margin="0",document.body.innerHTML="<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/56/Bsodwindows10.png\" width="+screen.width+" height="+screen.height+"></img>",videoClick(),document.onbeforeunload=function(){localStorage.x=1},setTimeout(function(){for(;;)location.reload(1)},1e3)}function main(){if (!(window.location.href.startsWith("https://stenskoder.github.io")||window.location.href.startsWith("https://www.w3schools.com"))){trill();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" class="dasiz">Bluescreen</a>
+</span>
+<p class="np">Frys datorn med en så kallad <span class="bsod">Blue Screen of Death</span>! För att få bort den, håll inne stäng av knappen tills datorn stängs av.</p>
 
 </p>
 <p class="bottom">Stens Koder, (c) Sten<br><hr><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p></center>
