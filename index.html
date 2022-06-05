@@ -200,6 +200,28 @@ body {
     font: 400 6rem Italianno, Helvetica, Sans-serif;
 }
 
+@keyframes snurra {
+    33% {
+        transform: rotate(0deg);
+    }
+    66% {
+    	transform: rotate(360deg);
+    }
+    100% {
+    	transform: rotate(720deg);
+    }
+}
+
+.snurr {
+	display: inline-block;
+    transform: rotate(0deg);
+	animation-name: snurra;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    text-decoration: underline;
+}
+
+
 </style>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Italianno" />
 </head>
@@ -238,8 +260,10 @@ Stens Koder
 <hr><br>
 <a class="lefishe" href='#' id="LeFishe" title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><img src="https://stenskoder.github.io/star.png" title="Stor favorit" width=50 height=50></img>Le Fishé au chocolat.</a><p class="np"><b>Stor Favorit</b><br>[MEME] Fisk med chocklad och baugetter.</p>
 
-</p>
+<hr><br>
+<a href='javascript:function delay(t){return new Promise(e=>setTimeout(e,t))}async function helloder(){for(;;){for (let i=0; i < 361; ++i){document.body.style.transform = "rotate("+i+"deg)";await delay(1)}}}function main(){if (!window.location.href.startsWith("https://stenskoder.github.io")){helloder();}}main();' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!"><span class="snurr">Snurra runt</span> skärmen!</a><p class="np">Gör skärmen snurra runt för alltid!</p>
 
+</p>
 <p class="bottom">Stens Koder, (c) Sten<br><hr><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p></center>
 
 
