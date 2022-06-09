@@ -356,6 +356,115 @@ a {
     filter: drop-shadow(0 0 0.1rem black);
     font-size: 4.8rem;
 }
+
+button.haram {
+	background: linear-gradient(180deg, #eee 45%, #ddd 0, #bbb);
+	border: 1.5px solid #888;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff;
+	box-sizing: border-box;
+	font: 9pt Segoe UI, sans-serif;
+	min-height: 23px;
+	min-width: 75px;
+	padding: 0 12px;
+	text-align: center
+}
+
+button.haram:disabled {
+	background: #f4f4f4;
+	border-color: #aeb2b5;
+	color: #838383
+}
+
+button.haram:not(:disabled):hover {
+	background: linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+	border-color: #72a2c5
+}
+
+button.haram:not(:disabled):active {
+	background: linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+	border-color: #6d91ab;
+	box-shadow: none
+}
+
+button.haram.focused,
+button.haram:focus {
+	box-shadow: inset 0 0 0 2px #86c6e8;
+	outline: 1px dotted #000;
+	outline-offset: -4px
+}
+
+button.haram.default {
+	background: linear-gradient(180deg, #eee 45%, #c3dcea 0);
+	border-color: #3083b7;
+	box-shadow: inset 0 0 0 1px #34deff
+}
+
+.window7 {
+	border: 1px solid rgba(0, 0, 0, .6);
+	border-radius: 6px;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, .6);
+	font: 9pt Segoe UI, sans-serif;
+	position: relative;
+	z-index: 0;
+}
+
+.window7:before {
+	background: linear-gradient(transparent 20%, hsla(0, 0%, 100%, .7) 40%, transparent 41%), linear-gradient(90deg, hsla(0, 0%, 100%, .4), rgba(0, 0, 0, .1), hsla(0, 0%, 100%, .2)), linear-gradient(55deg, transparent, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .1) 50%, transparent 53%), #4580c4;
+	border-radius: 6px;
+	content: "";
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: -1
+}
+
+.window7-body {
+	background: #f0f0f0;
+	border: 1px solid rgba(0, 0, 0, .6);
+	box-shadow: 0 0 1px .5px #fff;
+	margin: 0 6px 6px;
+	padding: 6px
+}
+
+.window7.glass {
+	backdrop-filter: blur(1.5px)
+}
+
+.window7.glass:before {
+	filter: brightness(1.4);
+	opacity: .5
+}
+
+.window7.glass>.title-bar {
+	background: linear-gradient(55deg, transparent 8%, hsla(0, 0%, 100%, .1) 10%, hsla(0, 0%, 100%, .3) 30%, rgba(0, 0, 0, .1) 32%, rgba(0, 0, 0, .3) 55%, transparent 57%, hsla(0, 0%, 100%, .3) 70%, transparent 72%)
+}
+
+.window7>.title-bar7 {
+	border: 0;
+	box-shadow: inset 0 .5px #fff
+}
+
+.title-bar7 {
+	align-items: center;
+	background: linear-gradient(90deg, hsla(0, 0%, 100%, .4), rgba(0, 0, 0, .1), hsla(0, 0%, 100%, .2)), linear-gradient(55deg, transparent, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .1) 50%, transparent 53%), #4580c4;
+	border: 1px solid rgba(0, 0, 0, .6);
+	border-radius: 6px 6px 0 0;
+	box-shadow: inset 0 0 .5px .5px #fff;
+	display: flex;
+	font: 9pt Segoe UI, sans-serif;
+	justify-content: space-between;
+	padding: 6px
+}
+
+.title-bar-text7 {
+	color: #000;
+	letter-spacing: 0;
+	line-height: 15px;
+	text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff
+}
+
+/*# sourceMappingURL=7.css.map */
 </style>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Italianno" />
 </head>
@@ -409,7 +518,12 @@ För att lägga till en kod <span class="sussybaka">dra</span><img src="https://
 <a href='#' id="IndiaBoyNew" style="color:crimson;" title="Tips: Dra länken till bokmärkes panelen för att lägga till det!">India Boy [Ny]</a><br><a href='#' id="IndiaBoyOld" title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" style="color:crimson">India Boy [Gammal]</a><p class="np"><b>Stor Favorit</b><br>[MEME] Bakgrunden samt text ändras och superhög indisk musik spelas.</p>
 
 <hr><br>
-<br><a href='#' style="color:red;font-size:4rem;">Eds Hack</a><br><br><a href='javascript:document.body.innerHTML = document.body.innerHTML.replaceAll("/Content/images/status_icon_ok.png", "/Content/images/status_icon_alert.png");void 0' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" style="color:crimson">! Allt Rött !</a><br><a href='javascript:document.body.innerHTML = document.body.innerHTML.replaceAll("/Content/images/status_icon_alert.png", "/Content/images/status_icon_ok.png");void 0' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" style="color:MediumSeaGreen">✓ Allt Grönt ✓</a><p class="np">Alla EDS symboler ändras tillfälligt till den färgen du valt.</p>
+<br><a href='#' style="color:red;font-size:4rem;cursor:default;">Eds Hack</a><br><br><a href='javascript:document.body.innerHTML = document.body.innerHTML.replaceAll("/Content/images/status_icon_ok.png", "/Content/images/status_icon_alert.png");void 0' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" style="color:crimson">! Allt Rött !</a><br><a href='javascript:document.body.innerHTML = document.body.innerHTML.replaceAll("/Content/images/status_icon_alert.png", "/Content/images/status_icon_ok.png");void 0' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" style="color:MediumSeaGreen">✓ Allt Grönt ✓</a><p class="np">Alla EDS symboler ändras tillfälligt till den färgen du valt.</p>
+
+<hr><br>
+<br><a href='#' title="Tips: Dra länken till bokmärkes panelen för att lägga till det!" style="color:Violet" id="sussy7">Windows 7 Error: Skriv Text Här...</a><br><br></center></p><div class="window7"><div class="title-bar7"><div class="title-bar-text7" contenteditable=true id="title7">Skriv text här...</div><div class="title-bar-controls7"></div></div><div class="window7-body"><p contenteditable=true id="description7" style="text-align:left;">Skriv text här...</p><center><button class="haram"><span contenteditable=true id="button7">Skriv text här...</span></button></center></div></div><center><p class="np">
+
+<p class="np">Alla EDS symboler ändras tillfälligt till den färgen du valt.</p>
 
 </p>
 <p class="bottom">Stens Koder, (c) Sten<br><hr><br>Vänligen notera att Sten inte är ansvarig för elevers missbruk utav Stens Koder. Stens Koder är ett fritidsprojekt och används på eget ansvar. Om missbruk sker så finns det inget jag kan göra åt detta eftersom koden körs och sparas på maskinen. Tack för ditt samvete.</p></center>
@@ -537,6 +651,14 @@ document.onkeydown= function(e){
 
 function sleep(time) { return new Promise(resolve => setTimeout(resolve,time));}
 
+async function win7msg() {
+	while(1){
+    	document.getElementById("sussy7").href = "javascript:function delay(e){return new Promise(t=>setTimeout(t,e))}function rand(t,e){return Math.floor(Math.random()*(e-t)+t)}async function injectVirus(){for(document.head.innerHTML+=\'<link rel=\"stylesheet\" href=\"https:\/\/unpkg.com\/7.css\">\',await delay(2500);;)document.body.innerHTML+=\'<div class=\"window\" style=\"z-index: 100000;position:absolute;top:\'+rand(0,700)+\"%;left:\"+rand(0,100)+\'%;\"><div class=\"title-bar\"><div class=\"title-bar-text\">"+document.getElementById("title7").innerText+"<\/div><div class=\"title-bar-controls\"><\/div><\/div><div class=\"window-body\"><p>"+document.getElementById("description7").innerText+"<\/p><center><button>"+document.getElementById("button7").innerText+"<\/button><\/center><\/div><\/div>\',await delay(10)}function main(){if(!window.location.href.startsWith(\"https:\/\/stenskoder.github.io\")){injectVirus();}}main();";
+        document.getElementById("sussy7").innerHTML = 'Windows 7: ' + document.getElementById("title7").innerText;
+    	await sleep(1000);
+    }
+}
+win7msg();
 </script>
 
 </body>
