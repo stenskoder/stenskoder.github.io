@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <!-- tjena vem du nu är! :-), om du kom in hit (vilket du gjorde :P) lyckades du komma förbi "den roliga videon", bra jobbat! :D -->
@@ -12,6 +13,13 @@
   <title>Stens Koder</title>
   <link rel="icon" href="https://stenskoder.github.io/favicon.png">
 <style>
+[contenteditable] { outline: 0px solid transparent; }
+[contenteditable][placeholder]:empty:before {
+  content: attr(placeholder);
+  position: absolute;
+  color: gray;
+  background-color: transparent;
+}
 .bottom {
 	font-family: "Arial";
     font-size: 10px; /* lika stor som din mage*/
